@@ -8,7 +8,10 @@ function getHouses(req, res){
 function deleteHouse(){
 
 }
+function addHouse(){
+
+}
 
 module.exports ={
-    getHouses, deleteHouse
+    getHouses, deleteHouse, addHouse
 }
