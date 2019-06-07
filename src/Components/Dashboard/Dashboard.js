@@ -10,7 +10,8 @@ class Dashboard extends Component {
     constructor(props){
         super(props)
         this.state = {
-            houses: store.getState().houses
+            houses: []
+            // store.getState().houses
         }
     }
 

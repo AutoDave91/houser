@@ -9,11 +9,16 @@ class Wizard extends Component {
     constructor(props){
         super(props)
         this.state = {
-            name: store.getState().name,
-            address: store.getState().address,
-            city: store.getState().city,
-            state: store.getState().state,
-            zip: store.getState().zip
+            name: '',
+            // store.getState().name,
+            address: '',
+            // store.getState().address,
+            city: '',
+            // store.getState().city,
+            state: '',
+            // store.getState().state,
+            zip: '',
+            // store.getState().zip
         }
         this.addHouse = this.addHouse.bind(this);
         this.cancel = this.cancel.bind(this);
@@ -56,6 +61,11 @@ class Wizard extends Component {
         store.dispatch({type: ADD_STATE, payload: this.state.state});
         store.dispatch({type: ADD_ZIP, payload: this.state.zip});
     }
+    componentDidUpdate(prevProps) {
+        if (this.props !== prevProps) {
+          this.props.getHouses(this.props);
+        }
+      }
 
     render(){
         let {updateName, updateAddress, updateCity, updateState, updateZip} = this.props;

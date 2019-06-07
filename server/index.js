@@ -27,6 +27,7 @@ massive(CONNECTION_STRING)
 
 app.get('/api/houses', controller.getHouses)
 app.post('/api/wizard/add', controller.addHouse)
+app.put('/api/wizard/edit', controller.editHouse)
 app.delete('/api/houses/:id', controller.deleteHouse)
 
 app.listen(SERVER_PORT, ()=>{
