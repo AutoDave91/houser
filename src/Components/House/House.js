@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import axios from 'axios';
 
 class House extends Component {
     constructor(props){
@@ -12,8 +11,12 @@ class House extends Component {
 
     render(){
         return(
-            <main>
-                <h3>House</h3>
+            <main className='House'>
+                <h1>Property Name: </h1>
+                <h3>Address: </h3>
+                <h3>City: </h3>
+                <h3>State: </h3>
+                <h3>Zip: </h3>
             </main>
         )
     }

@@ -3,8 +3,7 @@ import {HashRouter} from 'react-router-dom'
 
 import './App.css';
 import Header from './Components/Header/Header';
-import Dashboard from './Components/Dashboard/Dashboard';
-import Wizard from './Components/Wizard/Wizard';
+import routes from './routes'
 
 function App() {
   return (
@@ -15,8 +14,7 @@ function App() {
       </header>
       <section className='Center'>
         <HashRouter>
-          <Dashboard />
-          <Wizard />
+          {routes}
         </HashRouter>
       </section>
     </main>

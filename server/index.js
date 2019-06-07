@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const app = express();
 const {SERVER_PORT, SESSION_SECRET, CONNECTION_STRING} = process.env;
-const path = '//';
+const controller = require('./controller')
 
 app.use(express.json());
 app.use(session({
@@ -25,7 +25,9 @@ massive(CONNECTION_STRING)
         console.log("Error connecting to database. :(")
     })
 
+app.get('/api/houses', controller.getHouses)
 
+app.delete('/api/houses/:id', controller.deleteHouse)
 
 app.listen(SERVER_PORT, ()=>{
     console.log(`Listening on port ${SERVER_PORT}. Waiting on database...`)
